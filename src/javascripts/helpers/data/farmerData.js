@@ -10,7 +10,7 @@ const getFarmers = () => new Promise((resolve, reject) => {
         demFarmers[farmerId].id = farmerId;
         farmers.push(demFarmers[farmerId]);
       });
-      resolve(response.data.farmers);
+      resolve(farmers);
     })
     .catch((error) => reject(error));
 });
