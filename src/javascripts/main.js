@@ -1,10 +1,18 @@
 import 'bootstrap';
 import '../styles/main.scss';
 import cowList from './components/cowList/cowList';
+import farmerList from './components/farmerList/farmerList';
+import farmerCowData from './helpers/data/farmerCowData';
 
 const init = () => {
   cowList.buildCows();
   console.error('hi');
+  farmerList.buildFarmers();
+  farmerCowData.getFarmerCows()
+    .then((farmerCows) => {
+      console.log('from main.js', farmerCows);
+    })
+    .catch((error) => console.error(error));
 };
 
 init();
